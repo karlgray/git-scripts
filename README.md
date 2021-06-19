@@ -1,4 +1,4 @@
-# git-scripts
+# Introduction
 Bashrc commands for handling git/github.
 
 I use these in my .bashrc file to quickly run a chain of git commands and to do some basic sanity checks.
@@ -12,6 +12,14 @@ To prevent me accidentally pushing from main I ran this command.
 
  *git config branch.main.pushRemote no_push*
 
+ The gitsave() gitcheckout() and gitcleanup() commands all have checks to prevent them running on main.
+
+ I also configure github not to allow pushes to main.
+
+# What the scripts do.
+
+Each of these should be placed in your .bashrc file then either log out and back in or run this command
+*source ~/.bashrc*
 
 ## gittest()
 
