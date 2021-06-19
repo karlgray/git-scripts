@@ -56,7 +56,7 @@ git checkout $1 || {
 		echo "failed on branch checkout"
 		return
 	}
-	
+
 # Catch us up to main
 git merge main
 # push to branch origin.
@@ -113,7 +113,7 @@ gitcleanup() {
 	}
 
 	git pull || {
-		echo "failed on git pull"
+		echo "failed on git pull of staging"
 		return
 	}
 
@@ -133,6 +133,11 @@ gitcleanup() {
 	}
 
 	git merge main || {
+		echo "failed on merging main into $branch_name"
+		return
+	}
+
+	git push || {
 		echo "failed on git push to $branch_name"
 		return
 	}
