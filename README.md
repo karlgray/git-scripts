@@ -30,9 +30,10 @@ This is used to merge active branch into staging branch directly
 
 usage: *gittest*
 
+* Stores name of active branch
 * Checks out staging branch
-* Merges active branch, 
-* Pushes, 
+* Merges active branch into staging, 
+* Pushes to remote/staging, 
 * Checkouts the active branch.
 
 
@@ -45,7 +46,7 @@ usage: *gitsave "Commit message"*
 * Pulls the branch (to bring it up to date with remote)
 * Adds all
 * Commits with given message
-* Pushes to remote
+* Pushes to remote/current-branch
 
 ## gitcheckout()
 
@@ -62,7 +63,7 @@ usage: *gitcheckout branch-name*
 * pulls from remote/main
 * checks out branch-name
 * merges main into branch
-* pushes to remote.
+* pushes to remote/branch-name.
 
  ## gitnewbranch()
 
@@ -74,8 +75,8 @@ usage: *gitnewbranch branch-name*
 
 * checks out main
 * pulls from remote/main
-* creates and checks out new branch name
-* does push and creates upstream branch
+* creates and checks out new branch-name
+* does push and creates upstream remote/branch-name
 
 ## gitcleanup()
 
@@ -87,11 +88,13 @@ I am planning to add a loop that goes through each branch (except main) and brin
 
 usage: *gitcleanup*
 
+* Stores name of active branch
 * checks out main
 * pulls from remote/main
 * checks out staging
-* pulls from staging
+* pulls from remote/staging
 * merges from main
-* pushes back to staging remote.
+* pushes back to remote/staging.
 * checks out active branch
 * merges from main.
+* pushes back to remote/active branch

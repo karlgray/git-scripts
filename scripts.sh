@@ -32,6 +32,7 @@ gitsave() {
 gitcheckout() {
 	if [ "$#" -ne 1 ]; then
 		echo "You need to provide branch to checkout"
+		git branch
 		return
 	fi
 
@@ -40,9 +41,22 @@ gitcheckout() {
 		echo "Cannot checkout main,  use native git commands."
 		return
 	fi
+git checkout main || {
+		echo "failed on git checkout of main"
+		return
+	}
+
+git pull || {
+		echo "failed on git pull"
+		return
+	}
 
 # Checkout branch
-git checkout $1
+git checkout $1 || {
+		echo "failed on branch checkout"
+		return
+	}
+	
 # Catch us up to main
 git merge main
 # push to branch origin.
