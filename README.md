@@ -47,7 +47,7 @@ usage: *gitsave "Commit message"*
 * Commits with given message
 * Pushes to remote
 
-gitcheckout()
+## gitcheckout()
 
 This checks out a new branch and brings things up to date.  Prevents checking out main.
 if not branch is given it will list available branches.
@@ -64,7 +64,7 @@ usage: *gitcheckout branch-name*
 * merges main into branch
 * pushes to remote.
 
-gitnewbranch()
+ ## gitnewbranch()
 
 This creates a new branch.  It first checks out main, does a pull, then creates the branch based on this.
 
@@ -77,7 +77,7 @@ usage: *gitnewbranch branch-name*
 * creates and checks out new branch name
 * does push and creates upstream branch
 
-gitcleanup()
+#  gitcleanup()
 
 This does quite a bit and will be added to over time.
 
