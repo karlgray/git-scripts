@@ -18,7 +18,7 @@ To prevent me accidentally pushing from main I ran this command.
 
 # What the scripts do.
 
-Each of these should be placed in your .bashrc file then either log out and back in or run this command
+Each of these should be placed in your .bashrc file then either log out and back in or run this command.  
 *source ~/.bashrc*
 
 ## gittest()
