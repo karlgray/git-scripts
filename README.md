@@ -1,9 +1,9 @@
 # Introduction
-Bashrc commands for handling git/github.
+Here are my .bashrc commands for handling git/github.
 
 I use these in my .bashrc file to quickly run a chain of git commands and to do some basic sanity checks.
 
-My git process is that I have 2 main branches, live and staging.  Live can never be committed to or pushed to on github.
+My git process is that I have 2 main branches, live and staging.  Live can never be committed to or pushed to locally or on github.
 Live can only be merged into via a PR on github.
 
 Staging can be merged locally and pushed to remote where it is automatically deployed using webhooks.  Any developer in the team can merge to staging and test.
