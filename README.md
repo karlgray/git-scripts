@@ -21,7 +21,7 @@ To prevent me accidentally pushing from main I ran this command.
 
  I also configure github not to allow pushes to main.
 
- See [https://github.com/karlgray/git-scripts/blob/docs/DEPLOY.MD] to see how I auto deploy staging and main.
+ See [here ](https://github.com/karlgray/git-scripts/blob/docs/DEPLOY.MD) to see how I auto deploy staging and main.
 
 # What the scripts do.
 
