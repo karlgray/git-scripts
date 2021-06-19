@@ -50,7 +50,7 @@ usage: *gitsave "Commit message"*
 ## gitcheckout()
 
 This checks out a new branch and brings things up to date.  Prevents checking out main.
-if not branch is given it will list available branches.
+if no branch is given it will list available branches.
 
 Once the branch is checked out it will merge from main and push the results to the remote.
 
