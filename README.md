@@ -77,7 +77,7 @@ usage: *gitnewbranch branch-name*
 * creates and checks out new branch name
 * does push and creates upstream branch
 
-#  gitcleanup()
+## gitcleanup()
 
 This does quite a bit and will be added to over time.
 
