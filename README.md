@@ -1,7 +1,8 @@
 # Introduction
 Here are my .bashrc commands for handling git/github.
 
-* PLEASE NOTE: I am new to working in a team and using git/github in this way - Any suggestions / constructive criticisms are welcome*
+* PLEASE NOTE:*  
+I am new to working in a team and using git/github in this way - Any suggestions / constructive criticisms are welcome.
 
 I use these in my .bashrc file to quickly run a chain of git commands and to do some basic sanity checks.
 
