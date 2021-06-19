@@ -18,8 +18,11 @@ To prevent me accidentally pushing from main I ran this command.
 
 # What the scripts do.
 
-Each of these should be placed in your .bashrc file then either log out and back in or run this command.  
+Each of these should be placed in your .bashrc file then either log out and back in or run this command.
+
 *source ~/.bashrc*
+
+In each command below you will see a brief description of it's intent, the usage, then a list of steps it takes.
 
 ## gittest()
 
@@ -44,3 +47,51 @@ usage: *gitsave "Commit message"*
 * Commits with given message
 * Pushes to remote
 
+gitcheckout()
+
+This checks out a new branch and brings things up to date.  Prevents checking out main.
+if not branch is given it will list available branches.
+
+Once the branch is checked out it will merge from main and push the results to the remote.
+
+This means when you start working on a newly checked branch you are working on the most up to date code.
+
+usage: *gitcheckout branch-name*
+
+* checks out main
+* pulls from remote/main
+* checks out branch-name
+* merges main into branch
+* pushes to remote.
+
+gitnewbranch()
+
+This creates a new branch.  It first checks out main, does a pull, then creates the branch based on this.
+
+It also pushes and sets the upstream branch.
+
+usage: *gitnewbranch branch-name*
+
+* checks out main
+* pulls from remote/main
+* creates and checks out new branch name
+* does push and creates upstream branch
+
+gitcleanup()
+
+This does quite a bit and will be added to over time.
+
+It brings main up to date, then brings staging up to date, then brings the current branch up to date.
+
+I am planning to add a loop that goes through each branch (except main) and brings them all up to date.  This may be a separate command or may be in this command in the future.  I need to understand the workflow more before doing this.
+
+usage: *gitcleanup*
+
+* checks out main
+* pulls from remote/main
+* checks out staging
+* pulls from staging
+* merges from main
+* pushes back to staging remote.
+* checks out active branch
+* merges from main.

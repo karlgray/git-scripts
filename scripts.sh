@@ -31,7 +31,7 @@ gitsave() {
 # Checksout a branch and merges from main to bring it up to date and then pushes.
 gitcheckout() {
 	if [ "$#" -ne 1 ]; then
-		echo "You need to provide commit message/comment"
+		echo "You need to provide branch to checkout"
 		return
 	fi
 
