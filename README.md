@@ -10,7 +10,7 @@ Staging can be merged locally and pushed to remote where it is automatically dep
 
 To prevent me accidentally pushing from main I ran this command.
 
-  git config branch.main.pushRemote no_push
+ *git config branch.main.pushRemote no_push*
 
 
 ## gittest()
