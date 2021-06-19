@@ -8,6 +8,9 @@ Live can only be merged into via a PR on github.
 
 Staging can be merged locally and pushed to remote where it is automatically deployed using webhooks.  Any developer in the team can merge to staging and test.
 
+To prevent me accidentally pushing from main I ran this command.
+
+  git config branch.main.pushRemote no_push
 
 
 ## gittest()
