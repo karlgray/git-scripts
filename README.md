@@ -1,6 +1,9 @@
 # Introduction
 Here are my .bashrc commands for handling git/github.
 
+*PLEASE NOTE:*  
+I am new to working in a team and using git/github in this way - Any suggestions / constructive criticisms are welcome.
+
 I use these in my .bashrc file to quickly run a chain of git commands and to do some basic sanity checks.
 
 My git process is that I have 2 main branches, live and staging.  Live can never be committed to or pushed to locally or on github.
@@ -17,6 +20,8 @@ To prevent me accidentally pushing from main I ran this command.
  The gitsave() gitcheckout() and gitcleanup() commands all have checks to prevent them running on main.
 
  I also configure github not to allow pushes to main.
+
+ See [here ](https://github.com/karlgray/git-scripts/blob/docs/DEPLOY.MD) to see how I auto deploy staging and main.
 
 # What the scripts do.
 
