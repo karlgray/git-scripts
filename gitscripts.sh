@@ -1,3 +1,4 @@
+pwd
 source ./scripts/gitcleanup.sh
 source ./scripts/gitnewbranch.sh
 source ./scripts/gitcheckout.sh
