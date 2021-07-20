@@ -6,9 +6,9 @@ gitcleanup() {
 		return
 	fi
 
-	echo "${GREEN}*** Checking out Main ***${NC}"
+	echo -e "${GREEN}*** Checking out Main ***${NC}"
 	git checkout main || {
-		echo "Failed to checkout main${NC}"
+		echo -e "Failed to checkout main${NC}"
 		return
 	}
 
