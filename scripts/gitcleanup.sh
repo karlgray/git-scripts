@@ -2,61 +2,61 @@ gitcleanup() {
 	branch_name="$(git symbolic-ref --short -q HEAD)"
 	if [ $branch_name = "main" ]
 	then
-		/bin/echo "Do not run this on main.${NC}"
+		"Do not run this on main."
 		return
 	fi
 
-	/bin/echo -e "${GREEN}*** Checking out Main ***${NC}"
+	echo "*** Checking out Main ***"
 	git checkout main || {
-		echo -e "Failed to checkout main${NC}"
+		echo "Failed to checkout main"
 		return
 	}
 
-	echo "${GREEN}*** Pull on Main to bring it up to date ***${NC}"
+	echo "*** Pull on Main to bring it up to date ***"
 	git pull || {
-		echo "failed on git pull${NC}"
+		echo "failed on git pull"
 		return
 	}
 
-	echo "${GREEN}*** Checking out Staging ***${NC}"
+	echo "*** Checking out Staging ***"
 	git checkout staging || {
-		echo "failed on git checkout of staging${NC}"
+		echo "failed on git checkout of staging"
 		return
 	}
 
-	echo "${GREEN}*** Pull on Staging to bring it up to date ***${NC}"
+	echo "*** Pull on Staging to bring it up to date ***"
 	git pull || {
-		echo "failed on git pull of staging${NC}"
+		echo "failed on git pull of staging"
 		return
 	}
 
-	echo "${GREEN}*** Merge from Main into Staging to bring it up to date ***${NC}"
+	echo "*** Merge from Main into Staging to bring it up to date ***"
 	git merge main || {
-		echo "Couldn't merge main into staging${NC}"
+		echo "Couldn't merge main into staging"
 		return
 	}
 
-	echo "${GREEN}*** Push to staging - will also run deploy script ***${NC}"
+	echo "*** Push to staging - will also run deploy script ***"
 	git push || {
-		echo "failed on git push to cpstaging${NC}"
+		echo "failed on git push to cpstaging"
 		return
 	}
 
-	echo "${GREEN}*** Checking out original branch $branch_name ***${NC}"
+	echo "*** Checking out original branch $branch_name ***"
 	git checkout $branch_name || {
-		echo "failed on git checkout of $branch_name ${NC}"
+		echo "failed on git checkout of $branch_name "
 		return
 	}
 
-	echo "${GREEN}*** Merge Main again to bring current branch up to date ***${NC}"
+	echo "*** Merge Main again to bring current branch up to date ***"
 	git merge main || {
-		echo "failed on merging main into $branch_name ${NC}"
+		echo "failed on merging main into $branch_name "
 		return
 	}
 
-	echo "${GREEN}*** Push branch $branch_name to origin ***${NC}"
+	echo "*** Push branch $branch_name to origin ***"
 	git push || {
-		echo "failed on git push to $branch_name ${NC}"
+		echo "failed on git push to $branch_name "
 		return
 	}
 }

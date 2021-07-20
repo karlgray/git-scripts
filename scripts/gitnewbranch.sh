@@ -5,24 +5,24 @@ gitnewbranch() {
 		return
 	fi
 
-	echo "${GREEN}*** Checking out Main ***${NC}"
+	echo "*** Checking out Main ***${NC}"
 	git checkout main || {
-		echo "${RED}failed on git checkout of main${NC}"
+		echo "failed on git checkout of main${NC}"
 		return
 	}
 
-	echo "${GREEN}*** Pull on main to bring it up to date ***${NC}"
+	echo "*** Pull on main to bring it up to date ***${NC}"
 	git pull || {
-		echo "${RED}failed on git pull${NC}"
+		echo "failed on git pull${NC}"
 		return
 	}
 
-	echo "${GREEN}*** Creating branch $1 ***${NC}"
+	echo "*** Creating branch $1 ***${NC}"
 	git checkout -b $1 || {
-		echo "${RED}failed on creation of branch${NC}"
+		echo "failed on creation of branch${NC}"
 		return
 	}
 
-	echo "${GREEN}*** Push with --set-upstream origin ***${NC}"
+	echo "*** Push with --set-upstream origin ***${NC}"
 	git push --set-upstream origin $1
 }
