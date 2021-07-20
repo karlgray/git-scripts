@@ -2,11 +2,11 @@ gitcleanup() {
 	branch_name="$(git symbolic-ref --short -q HEAD)"
 	if [ $branch_name = "main" ]
 	then
-		echo "Do not run this on main.${NC}"
+		/bin/echo "Do not run this on main.${NC}"
 		return
 	fi
 
-	echo -e "${GREEN}*** Checking out Main ***${NC}"
+	/bin/echo -e "${GREEN}*** Checking out Main ***${NC}"
 	git checkout main || {
 		echo -e "Failed to checkout main${NC}"
 		return
