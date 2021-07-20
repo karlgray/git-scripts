@@ -1,7 +1,8 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 
-NC='\033[0m'
+#NC='\033[0m'
+NC='\e[0m';
 Red='\033[0;31m'
 Green='\033[0;32m'
 
