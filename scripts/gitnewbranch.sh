@@ -7,19 +7,19 @@ gitnewbranch() {
 
 	echo "${GREEN}*** Checking out Main ***${NC}"
 	git checkout main || {
-		echo "failed on git checkout of main"
+		echo "${RED}failed on git checkout of main${NC}"
 		return
 	}
 
 	echo "${GREEN}*** Pull on main to bring it up to date ***${NC}"
 	git pull || {
-		echo "failed on git pull"
+		echo "${RED}failed on git pull${NC}"
 		return
 	}
 
 	echo "${GREEN}*** Creating branch $1 ***${NC}"
 	git checkout -b $1 || {
-		echo "failed on creation of branch"
+		echo "${RED}failed on creation of branch${NC}"
 		return
 	}
 
