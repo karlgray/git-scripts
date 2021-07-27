@@ -1,28 +1,28 @@
 gitnewbranch() {
 	if [ "$#" -ne 1 ]; then
-		echo "You need to provide the name of the branch - All lowercase words separated by - "
-		echo "Prefix should be either feature- or hotfix-"
+		echo -e "${RED}You need to provide the name of the branch - All lowercase words separated by - ${NC}"
+		echo -e "${RED}Prefix should be either feature- or hotfix-${NC}"
 		return
 	fi
 
-	echo "*** Checking out Main ***${NC}"
+	echo -e "${GREEN}*** Checking out Main ***${NC}"
 	git checkout main || {
-		echo "failed on git checkout of main${NC}"
+		echo -e "${RED}failed on git checkout of main${NC}"
 		return
 	}
 
-	echo "*** Pull on main to bring it up to date ***${NC}"
+	echo -e "${GREEN}*** Pull on main to bring it up to date ***${NC}"
 	git pull || {
-		echo "failed on git pull${NC}"
+		echo -e "${RED}failed on git pull${NC}"
 		return
 	}
 
-	echo "*** Creating branch $1 ***${NC}"
+	echo -e "${GREEN}*** Creating branch $1 ***${NC}"
 	git checkout -b $1 || {
-		echo "failed on creation of branch${NC}"
+		echo -e "${RED}failed on creation of branch${NC}"
 		return
 	}
 
-	echo "*** Push with --set-upstream origin ***${NC}"
+	echo -e "${GREEN}*** Push with --set-upstream origin ***${NC}"
 	git push --set-upstream origin $1
 }

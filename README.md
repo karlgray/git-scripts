@@ -6,8 +6,8 @@ I am new to working in a team and using git/github in this way - Any suggestions
 
 I use these in my .bashrc file to quickly run a chain of git commands and to do some basic sanity checks.
 
-My git process is that I have 2 main branches, live and staging.  Live can never be committed to or pushed to locally or on github.
-Live can only be merged into via a PR on github.
+My git process is that I have 2 main branches, production and staging.  Production can never be committed to or pushed to locally or on github.
+Production can only be merged into via a PR on github.
 
 Staging can be merged locally and pushed to the github remote where it is automatically deployed using webhooks to the staging server.  Any developer in the team can merge to staging and test their code without permission or a PR.
 
@@ -19,14 +19,18 @@ To prevent me accidentally pushing from main I ran this command.
 
  The gitsave() gitcheckout() and gitcleanup() commands all have checks to prevent them running on main.
 
+ Each command is in it's own file located in the scripts folder.
+
  I also configure github not to allow pushes to main.
 
  See [here ](https://github.com/karlgray/git-scripts/blob/main/DEPLOY.MD) to see how I auto deploy staging and main.
 
 # What the scripts do.
 
-Each of these should be placed in your .bashrc file then either log out and back in or run this command.
+In your $HOME/bashrc add this line
+source /path/to/directory/gitscripts.sh
 
+Then run
 *source ~/.bashrc*
 
 In each command below you will see a brief description of it's intent, the usage, then a list of steps it takes.
