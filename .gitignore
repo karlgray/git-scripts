@@ -1,0 +1,22 @@
+.DS_Store
+
+
+/vendor/
+application/vendor
+
+
+tests
+# IDE Files
+#-------------------------
+/nbproject/
+.idea/*
+
+## Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+*/config/config.php
+*/config/database.php
