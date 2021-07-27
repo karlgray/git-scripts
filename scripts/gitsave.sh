@@ -1,32 +1,32 @@
 #  pulls the branch to bring it up to date with remote,  adds all, commits with given message the pushes to remote
 gitsave() {
 	if [ "$#" -ne 1 ]; then
-		echo "You need to provide commit message/comment"
+		echo -e "${RED}You need to provide commit message/comment${NC}"
 		return
 	fi
 
 	branch_name="$(git symbolic-ref --short -q HEAD)"
 	if [ $branch_name = "main" ]
 	then
-		echo "Cannot add, or commit to main, use branch."
+		echo -e "${RED}Cannot add, or commit to main, use branch.${NC}"
 		return
 	fi
 
-	echo "*** Pull from branch $branch_name to bring it up to date ***"
+	echo -e "${GREEN}*** Pull from branch $branch_name to bring it up to date ***${NC}"
 	git pull || {
-		echo "failed on git pull"
+		echo -e "${RED}failed on git pull${NC}"
 		return
 	}
 
-	echo "*** add all ***"
+	echo -e "${GREEN}*** add all ***${NC}"
 	git add .
 
-	echo "*** Commit ***"
+	echo -e "${GREEN}*** Commit ***${NC}"
 	git commit -m "$1"
 	
-	echo "*** Push to branch $branch_name to bring it up to date ***"
+	echo -e "${GREEN}*** Push to branch $branch_name to bring it up to date ***${NC}"
 	git push || {
-		echo "failed on git push to origin for branch $branch_name"
+		echo -e "${RED}failed on git push to origin for branch $branch_name${NC}"
 		return
 	}
 	
