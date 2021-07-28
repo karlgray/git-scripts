@@ -2,30 +2,30 @@
 gittest() {
 	branch_name="$(git symbolic-ref --short -q HEAD)"
 
-	echo "*** Checkout Staging ***"
+	echo -e "${GREEN}*** Checkout Staging ***${NC}"
 	git checkout staging || {
-		echo "failed on git checkout of staging"
+		echo -e "${RED}failed on git checkout of staging${NC}"
 		return
 	}
 
-	echo "*** Pull to bring staging up to date ***"
+	echo -e "${GREEN}*** Pull to bring staging up to date ***${NC}"
 	git pull || {
-		echo "failed on git pull of Staging"
+		echo -e "${RED}failed on git pull of Staging${NC}"
 		return
 	}
 	
-	echo "*** Merge branch $branch_name into staging ***"
+	echo -e "${GREEN}*** Merge branch $branch_name into staging ***${NC}"
 	git merge $branch_name || {
-		echo "Couldn't merge branch $branch_name into staging"
+		echo -e "${RED}Couldn't merge branch $branch_name into staging${NC}"
 		return
 	}
 
-	echo "*** Push to staging - will also run deploy script ***"
+	echo -e "${GREEN}*** Push to staging - will also run deploy script ***${NC}"
 	git push || {
-		echo "failed on git push to cpstaging"
+		echo -e "${RED}failed on git push to cpstaging${NC}"
 		return
 	}
 	
-	echo "*** Checking out original branch $branch_name ***"
+	echo -e "${GREEN}*** Checking out original branch $branch_name ***${NC}"
 	git checkout $branch_name
 }
